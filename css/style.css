@@ -775,11 +775,6 @@ h1, h2, h3, h4, h5, h6 {
  * Animations
  * ============================================ */
 .fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.fade-up.animated {
     opacity: 1;
     transform: translateY(0);
 }
@@ -820,14 +815,14 @@ h1, h2, h3, h4, h5, h6 {
         gap: 0;
         padding: 2rem;
         transform: translateY(-100%);
-        opacity: 0;
+        visibility: hidden;
         transition: var(--transition);
         box-shadow: var(--shadow-md);
     }
     
     .nav-menu.active {
         transform: translateY(0);
-        opacity: 1;
+        visibility: visible;
     }
     
     .nav-link {
