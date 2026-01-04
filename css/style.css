@@ -31,9 +31,9 @@
     --color-text: #1a1a1a;
     --color-text-secondary: #6e6e73;
     
-    /* Typography - Jungrak Style Fonts */
-    --font-display: 'Cormorant Garamond', serif;
-    --font-body: 'DM Sans', sans-serif;
+    /* Typography - Noto Sans */
+    --font-display: 'Noto Sans KR', sans-serif;
+    --font-body: 'Noto Sans KR', sans-serif;
     
     /* Layout */
     --nav-height: 80px;
