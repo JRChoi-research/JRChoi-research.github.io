@@ -232,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    opacity: 0;
+    opacity: 1;
 }
 
 .acronym-letter {
@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
     color: var(--color-beige-light);
     margin-bottom: 1rem;
-    opacity: 0;
+    opacity: 1;
 }
 
 .hero-description {
@@ -252,7 +252,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-beige-light);
     line-height: 1.8;
     margin-bottom: 2.5rem;
-    opacity: 0;
+    opacity: 1;
 }
 
 .hero-cta {
@@ -260,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    opacity: 0;
+    opacity: 1;
 }
 
 /* ============================================
