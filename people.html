@@ -1,110 +1,64 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Jungrak Choi</title>
-    <meta name="description" content="Learn about Jungrak Choi's background and expertise">
-    
+    <meta name="description" content="About Hunpyo Ju - Senior Researcher at ETRI, Ph.D. in Mechanical Engineering">
+    <title>About | Hunpyo Ju</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 8C12 8 18 14 24 20C24 20 28 16 32 12M24 20C24 20 20 24 16 28C16 28 12 32 8 36M24 20C24 20 28 24 32 28C32 28 36 32 40 36" 
-                          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-path"/>
-                </svg>
-            </a>
-            
+            <a href="index.html" class="nav-logo">Hunpyo Ju</a>
             <ul class="nav-menu">
-                <li><a href="people.html" class="nav-link active">About me</a></li>
-                <li><a href="research.html" class="nav-link">Research interest</a></li>
-                <li><a href="publications.html" class="nav-link">Publication</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="people.html" class="nav-link active">About</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            
-            <button class="nav-toggle" aria-label="Toggle menu">
+            <div class="nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">About Me</h1>
-            <p class="page-subtitle">Background, Education & Experience</p>
-        </div>
-    </section>
-
     <!-- Profile Section -->
-    <section class="section-white">
+    <section class="section section-gray" style="padding-top: calc(var(--nav-height) + 60px);">
         <div class="container">
-            <div class="profile-grid">
-                <div class="profile-image-container">
-                    <div class="profile-image-placeholder">
-                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
+            <div class="profile-card fade-up">
+                <div class="profile-image">
+                    <img src="assets/images/profile/Profile.jpg" alt="Hunpyo Ju">
                 </div>
-                
                 <div class="profile-info">
-                    <h2>Jungrak Choi, Ph.D.</h2>
-                    <p class="profile-title">Researcher in Wearable Electronics</p>
-                    <p class="profile-description">
-                        Specialized in designing and manufacturing wearable electronics for human body monitoring, 
-                        with a focus on Human-Computer Interaction (HCI) and Human-Robot Interaction (HRI). 
-                        My work bridges the gap between materials science, fabrication technologies, and 
-                        practical applications in healthcare and interactive systems.
+                    <h1>Hunpyo Ju</h1>
+                    <p class="profile-title">Senior Researcher, Ph.D.</p>
+                    <p class="profile-affiliation">
+                        Electronics and Telecommunications Research Institute (ETRI)<br>
+                        Daejeon, Republic of Korea
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="section-beige">
-        <div class="container">
-            <h2 class="section-heading">Education</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2018 - 2023</span>
-                        <h3>Ph.D. in Mechanical Engineering</h3>
-                        <p class="timeline-institution">Korea Advanced Institute of Science and Technology (KAIST)</p>
-                        <p class="timeline-detail">Dissertation: Advanced Wearable Sensors and 3D Electronics Fabrication</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2016 - 2018</span>
-                        <h3>M.S. in Mechanical Engineering</h3>
-                        <p class="timeline-institution">Korea Advanced Institute of Science and Technology (KAIST)</p>
-                        <p class="timeline-detail">Thesis: Functional Materials for Flexible Electronics</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2012 - 2016</span>
-                        <h3>B.S. in Mechanical Engineering</h3>
-                        <p class="timeline-institution">Seoul National University</p>
+                    <div class="profile-links">
+                        <a href="https://scholar.google.com/citations?user=K3CZhbIAAAAJ&hl=ko" target="_blank" rel="noopener" class="btn btn-primary">
+                            Google Scholar
+                        </a>
+                        <a href="/cdn-cgi/l/email-protection#a8c0ddc6d8d1c7e8cddcdac186dacd86c3da" class="btn btn-secondary">
+                            Email
+                        </a>
                     </div>
                 </div>
             </div>
@@ -112,74 +66,121 @@
     </section>
 
     <!-- Research Interests -->
-    <section class="section-white">
+    <section class="section section-white">
         <div class="container">
-            <h2 class="section-heading">Research Interests</h2>
-            
-            <div class="interests-grid">
-                <div class="interest-card fade-up">
-                    <div class="interest-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-                            <path d="M12 12h.01"></path>
-                        </svg>
-                    </div>
-                    <h3>Wearable Sensors</h3>
-                    <p>High-performance sensors based on functional structures and materials for health monitoring</p>
-                </div>
-
-                <div class="interest-card fade-up">
-                    <div class="interest-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v20M2 12h20"></path>
-                            <circle cx="12" cy="12" r="9"></circle>
-                        </svg>
-                    </div>
-                    <h3>3D Electronics Manufacturing</h3>
-                    <p>Advanced fabrication technologies for three-dimensional electronic devices</p>
-                </div>
-
-                <div class="interest-card fade-up">
-                    <div class="interest-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <h3>HCI & HRI Applications</h3>
-                    <p>Development of applications for human-computer and human-robot interaction</p>
+            <div class="fade-up" style="max-width: 800px; margin: 0 auto;">
+                <span class="section-label">Research Interests</span>
+                <h2 style="margin-bottom: 1.5rem;">Areas of Focus</h2>
+                <p class="text-large" style="margin-bottom: 2rem;">
+                    My research focuses on creating intelligent active deformation systems using soft actuators
+                    and smart materials. I am particularly interested in the integration of flexible electronics
+                    with soft robotics for a wide range of applications.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    <span style="background: var(--bg-main); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem;">Soft Robotics</span>
+                    <span style="background: var(--bg-main); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem;">Shape Memory Alloys</span>
+                    <span style="background: var(--bg-main); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem;">Dielectric Elastomer Actuators</span>
+                    <span style="background: var(--bg-main); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem;">Flexible Electronics</span>
+                    <span style="background: var(--bg-main); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem;">Reinforcement Learning</span>
+                    <span style="background: var(--bg-main); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem;">Active Deformation</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="section-beige">
+    <!-- Education -->
+    <section class="section section-gray">
         <div class="container">
-            <h2 class="section-heading">Professional Experience</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2023 - Present</span>
-                        <h3>Postdoctoral Researcher</h3>
-                        <p class="timeline-institution">KAIST - Soft Robotics Lab</p>
-                        <p class="timeline-detail">Leading research on wearable electronics and flexible sensors</p>
-                    </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="fade-up">
+                    <span class="section-label">Education</span>
+                    <h2 style="margin-bottom: 2rem;">Academic Background</h2>
                 </div>
 
-                <div class="timeline-item fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2020 - 2023</span>
-                        <h3>Research Assistant</h3>
-                        <p class="timeline-institution">KAIST - Department of Mechanical Engineering</p>
-                        <p class="timeline-detail">Conducted research on 3D electronics fabrication and functional materials</p>
+                <div class="timeline fade-up">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2017 - 2022</span>
+                        <h3 class="timeline-title">Ph.D. in Mechanical Engineering</h3>
+                        <p class="timeline-subtitle">
+                            Gwangju Institute of Science and Technology (GIST)<br>
+                            Advisor: Prof. Jongho Lee<br>
+                            Thesis: "Multi-channel soft robotic films for actively bendable electronics and undulation-based-locomotion"
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">2015 - 2017</span>
+                        <h3 class="timeline-title">M.S. in Mechanical Engineering</h3>
+                        <p class="timeline-subtitle">
+                            Gwangju Institute of Science and Technology (GIST)<br>
+                            Thesis: "Self-deformable film using shape memory alloy embedded in patterned structures"
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">2011 - 2015</span>
+                        <h3 class="timeline-title">B.S. in Mechanical Engineering</h3>
+                        <p class="timeline-subtitle">
+                            Kyungpook National University
+                        </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section-white">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="fade-up">
+                    <span class="section-label">Experience</span>
+                    <h2 style="margin-bottom: 2rem;">Professional Background</h2>
+                </div>
+
+                <div class="timeline fade-up">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2023 - Present</span>
+                        <h3 class="timeline-title">Senior Researcher</h3>
+                        <p class="timeline-subtitle">
+                            Electronics and Telecommunications Research Institute (ETRI)<br>
+                            Daejeon, Republic of Korea
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">2022 - 2023</span>
+                        <h3 class="timeline-title">Postdoctoral Researcher</h3>
+                        <p class="timeline-subtitle">
+                            Gwangju Institute of Science and Technology (GIST)
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">2015 - 2022</span>
+                        <h3 class="timeline-title">Research Assistant</h3>
+                        <p class="timeline-subtitle">
+                            Gwangju Institute of Science and Technology (GIST)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliation -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <span class="section-label">Affiliation</span>
+                <h2 style="margin-bottom: 2rem;">Current Institution</h2>
+                <img src="assets/images/profile/Affiliation.png" alt="ETRI Logo"
+                     style="max-width: 300px; margin: 0 auto 1.5rem; display: block;">
+                <p class="text-secondary">
+                    Electronics and Telecommunications Research Institute (ETRI)<br>
+                    218 Gajeong-ro, Yuseong-gu, Daejeon, 34129<br>
+                    Republic of Korea
+                </p>
             </div>
         </div>
     </section>
@@ -188,17 +189,13 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 8C12 8 18 14 24 20C24 20 28 16 32 12M24 20C24 20 20 24 16 28C16 28 12 32 8 36M24 20C24 20 28 24 32 28C32 28 36 32 40 36" 
-                              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <div class="footer-links">
+                    <a href="https://scholar.google.com/citations?user=K3CZhbIAAAAJ&hl=ko" target="_blank" rel="noopener" class="footer-link">Google Scholar</a>
+                    <a href="/cdn-cgi/l/email-protection#365e4358464f59765342445f184453185d44" class="footer-link">Email</a>
                 </div>
-                <p class="footer-text">© 2025 Jungrak Choi. All rights reserved.</p>
+                <p class="footer-copyright">
+                    &copy; 2025 Hunpyo Ju. All rights reserved.
+                </p>
             </div>
         </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+    </foote
