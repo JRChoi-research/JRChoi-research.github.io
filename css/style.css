@@ -269,34 +269,88 @@ h1, h2, h3, h4, h5, h6 {
 .hero-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-bottom: 3rem;
     text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-feature {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 1.75rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.hero-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--color-accent) 0%, rgba(143, 188, 143, 0.3) 100%);
+}
+
+.hero-feature::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(143, 188, 143, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-feature:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(143, 188, 143, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #6a9a6a 100%);
     border-radius: 12px;
-    border-left: 3px solid var(--color-accent);
-    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
+}
+
+.feature-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
 }
 
 .feature-label {
-    display: inline-block;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-accent);
+    display: block;
+    font-size: 1.1rem;
     font-weight: 600;
+    color: var(--color-white);
     margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
 }
 
 .feature-text {
-    font-size: 0.95rem;
-    color: var(--color-beige-light);
+    font-size: 0.9rem;
+    color: rgba(245, 240, 230, 0.85);
     line-height: 1.7;
     margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-subtitle {
@@ -863,6 +917,205 @@ h1, h2, h3, h4, h5, h6 {
 .copy-btn:hover {
     background: var(--color-slate-blue);
     color: white;
+}
+
+/* ============================================
+ * Publications Page
+ * ============================================ */
+.pub-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    flex-wrap: wrap;
+}
+
+.pub-legend span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Featured Publications Grid */
+.featured-pub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.featured-pub-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.featured-pub-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.featured-pub-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: var(--color-beige-light);
+}
+
+.featured-pub-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-pub-content {
+    padding: 1.5rem;
+}
+
+.featured-pub-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.featured-pub-authors {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.featured-pub-journal {
+    font-size: 0.9rem;
+    color: var(--color-slate-blue);
+    font-weight: 500;
+}
+
+.pub-badge {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.pub-badge.corresponding {
+    background: var(--color-slate-blue);
+}
+
+/* Dark Section */
+.section-dark {
+    background: var(--color-slate-blue);
+    color: var(--color-white);
+    padding-bottom: 4rem;
+}
+
+.section-label-light {
+    display: inline-block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.section-title-light {
+    color: var(--color-white);
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+/* Accordion */
+.pub-accordion {
+    max-width: 900px;
+}
+
+.pub-year-group {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pub-year-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.pub-year-header:hover {
+    color: var(--color-accent);
+}
+
+.pub-year-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.pub-year-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+.pub-year-content {
+    display: none;
+    padding-bottom: 1.5rem;
+}
+
+.pub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pub-list-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pub-list-item:first-child {
+    border-top: none;
+}
+
+.pub-number {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    min-width: 2rem;
+}
+
+.pub-details {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.pub-details strong {
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.pub-details em {
+    color: var(--color-accent);
+    font-style: italic;
 }
 
 /* ============================================

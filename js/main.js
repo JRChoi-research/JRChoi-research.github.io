@@ -299,6 +299,26 @@ function initVideoHandling() {
 }
 
 // ============================================
+// Publication Accordion
+// ============================================
+function initAccordion() {
+    const accordionHeaders = document.querySelectorAll('.pub-year-header');
+    
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.pub-year-icon');
+            
+            // Toggle current
+            header.setAttribute('aria-expanded', !isExpanded);
+            content.style.display = isExpanded ? 'none' : 'block';
+            icon.textContent = isExpanded ? '+' : '−';
+        });
+    });
+}
+
+// ============================================
 // Copy to Clipboard
 // ============================================
 function initCopyButtons() {
@@ -357,6 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initVideoHandling();
     initCopyButtons();
     initSmoothScroll();
+    initAccordion();
 });
 
 // Reinitialize animations on page show (for back/forward navigation)
