@@ -25,7 +25,10 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Jungrak Choi</a>
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/profile/JRlogo.png" alt="JR Logo" class="nav-logo-img">
+                <span>Jungrak Choi</span>
+            </a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="research.html" class="nav-link">Research</a></li>
@@ -57,7 +60,7 @@
         </div>
     </section>
 
-    <!-- Featured Research Section -->
+    <!-- Featured Research Section with Carousel -->
     <section class="section section-gray">
         <div class="container">
             <div class="section-header fade-up" style="text-align: center; margin-bottom: 3rem;">
@@ -65,80 +68,97 @@
                 <h2>Exploring Wearable & Stretchable Electronics</h2>
             </div>
 
-            <div class="research-grid">
-                <!-- Research 01 -->
-                <article class="research-card fade-up">
-                    <div class="research-card-media">
-                        <img src="assets/images/research/research_01.png" alt="3D Shaped Electronics">
-                    </div>
-                    <div class="research-card-content">
-                        <h3 class="research-card-title">3D Shaped Electronics</h3>
-                        <p class="research-card-description">
-                            Three-dimensional shaped electronic device technology through thermoforming and pre-distortion patterning.
-                        </p>
-                        <span class="research-card-meta">Science Advances, 2021</span>
-                    </div>
-                </article>
+            <!-- Carousel Container -->
+            <div class="carousel-container fade-up">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
 
-                <!-- Research 02 -->
-                <article class="research-card fade-up">
-                    <div class="research-card-media">
-                        <img src="assets/images/research/research_02.png" alt="Stretchable Sensors">
-                    </div>
-                    <div class="research-card-content">
-                        <h3 class="research-card-title">Stretchable Physical Sensors</h3>
-                        <p class="research-card-description">
-                            High-performance stretchable/flexible physical sensors including tensile, pressure, and tactile sensors.
-                        </p>
-                        <span class="research-card-meta">Nano Energy, 2020</span>
-                    </div>
-                </article>
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track">
+                        <!-- Research 01 -->
+                        <article class="research-card carousel-slide" data-link="research.html#research-01">
+                            <div class="research-card-media">
+                                <img src="assets/images/research/research_01.png" alt="3D Shaped Electronics">
+                            </div>
+                            <div class="research-card-content">
+                                <h3 class="research-card-title">3D Shaped Electronics</h3>
+                                <p class="research-card-description">
+                                    Three-dimensional shaped electronic device technology through thermoforming and pre-distortion patterning.
+                                </p>
+                                <span class="research-card-meta">Science Advances, 2021</span>
+                            </div>
+                        </article>
 
-                <!-- Research 03 -->
-                <article class="research-card fade-up">
-                    <div class="research-card-media">
-                        <img src="assets/images/research/research_03.png" alt="Flexible Actuators">
+                        <!-- Research 02 -->
+                        <article class="research-card carousel-slide" data-link="research.html#research-02">
+                            <div class="research-card-media">
+                                <img src="assets/images/research/research_02.png" alt="Stretchable Sensors">
+                            </div>
+                            <div class="research-card-content">
+                                <h3 class="research-card-title">Stretchable Physical Sensors</h3>
+                                <p class="research-card-description">
+                                    High-performance stretchable/flexible physical sensors including tensile, pressure, and tactile sensors.
+                                </p>
+                                <span class="research-card-meta">Nano Energy, 2020</span>
+                            </div>
+                        </article>
+
+                        <!-- Research 03 -->
+                        <article class="research-card carousel-slide" data-link="research.html#research-03">
+                            <div class="research-card-media">
+                                <img src="assets/images/research/research_03.png" alt="Flexible Actuators">
+                            </div>
+                            <div class="research-card-content">
+                                <h3 class="research-card-title">Flexible Actuators</h3>
+                                <p class="research-card-description">
+                                    Research on flexible actuators for soft robotics and wearable applications.
+                                </p>
+                                <span class="research-card-meta">Advanced Materials Technologies, 2022</span>
+                            </div>
+                        </article>
+
+                        <!-- Research 04 -->
+                        <article class="research-card carousel-slide" data-link="research.html#research-04">
+                            <div class="research-card-media">
+                                <img src="assets/images/research/research_04.png" alt="Stretchable Circuits">
+                            </div>
+                            <div class="research-card-content">
+                                <h3 class="research-card-title">Stretchable Interfaces & Circuits</h3>
+                                <p class="research-card-description">
+                                    Development of stretchable/flexible interfaces, measurement and wireless communication circuits.
+                                </p>
+                                <span class="research-card-meta">Advanced Functional Materials, 2022</span>
+                            </div>
+                        </article>
                     </div>
-                    <div class="research-card-content">
-                        <h3 class="research-card-title">Flexible Actuators</h3>
-                        <p class="research-card-description">
-                            Research on flexible actuators for soft robotics and wearable applications.
-                        </p>
-                        <span class="research-card-meta">Advanced Materials Technologies, 2022</span>
-                    </div>
-                </article>
+                </div>
+
+                <button class="carousel-btn carousel-btn-next" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem;" class="fade-up">
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1"></button>
+                <button class="carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
+                <button class="carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
+                <button class="carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;" class="fade-up">
                 <a href="research.html" class="btn btn-primary">View All Research</a>
             </div>
         </div>
     </section>
 
-    <!-- Research Highlight -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header fade-up" style="text-align: center; margin-bottom: 3rem;">
-                <span class="section-label">Latest Work</span>
-                <h2>Stretchable Interfaces & Circuits</h2>
-                <p class="text-secondary text-large" style="max-width: 700px; margin: 1rem auto 0;">
-                    Development of stretchable/flexible interfaces, measurement and wireless communication circuits for real industry applications.
-                </p>
-            </div>
-
-            <div class="fade-up" style="max-width: 800px; margin: 0 auto;">
-                <div class="research-media-item">
-                    <img src="assets/images/research/research_04.png" alt="Stretchable Circuits" style="width: 100%; border-radius: 12px;">
-                </div>
-                <p class="text-secondary" style="text-align: center; margin-top: 1rem; font-style: italic;">
-                    Advanced Functional Materials, 2022
-                </p>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
-    <section class="section section-gray">
+    <section class="section section-white">
         <div class="container">
             <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto;">
                 <h2 style="margin-bottom: 1rem;">Interested in Collaboration?</h2>

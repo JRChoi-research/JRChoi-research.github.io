@@ -1,7 +1,7 @@
 /* ============================================
  * Personal Homepage - Main JavaScript
- * Version: v2.0
- * Author: Hunpyo Ju
+ * Version: v2.1
+ * Author: Hunpyo Ju (Modified)
  * Date: 2025-12-15
  * ============================================ */
 
@@ -82,6 +82,120 @@ function initNavigation() {
             link.classList.add('active');
         }
     });
+}
+
+// ============================================
+// Carousel
+// ============================================
+function initCarousel() {
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.carousel-btn-prev');
+    const nextBtn = document.querySelector('.carousel-btn-next');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    if (!track || slides.length === 0) return;
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    function updateCarousel() {
+        // Update track position
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update button states
+        if (prevBtn) prevBtn.disabled = currentIndex === 0;
+        if (nextBtn) nextBtn.disabled = currentIndex === totalSlides - 1;
+    }
+    
+    function goToSlide(index) {
+        currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+        updateCarousel();
+    }
+    
+    function nextSlide() {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    }
+    
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    }
+    
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Click on card to navigate
+    slides.forEach(slide => {
+        slide.addEventListener('click', () => {
+            const link = slide.getAttribute('data-link');
+            if (link) {
+                window.location.href = link;
+            }
+        });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // Touch/Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (diff > swipeThreshold) {
+            nextSlide();
+        } else if (diff < -swipeThreshold) {
+            prevSlide();
+        }
+    }
+    
+    // Auto-play (optional - disabled by default)
+    // let autoPlayInterval;
+    // function startAutoPlay() {
+    //     autoPlayInterval = setInterval(() => {
+    //         if (currentIndex < totalSlides - 1) {
+    //             nextSlide();
+    //         } else {
+    //             currentIndex = 0;
+    //             updateCarousel();
+    //         }
+    //     }, 5000);
+    // }
+    // startAutoPlay();
+    
+    // Initialize
+    updateCarousel();
 }
 
 // ============================================
@@ -213,14 +327,36 @@ function initCopyButtons() {
 }
 
 // ============================================
+// Smooth Scroll for Hash Links
+// ============================================
+function initSmoothScroll() {
+    // Check if page loaded with hash
+    if (window.location.hash) {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                const navHeight = document.querySelector('.nav')?.offsetHeight || 80;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
+    }
+}
+
+// ============================================
 // Initialize
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
     initContentProtection();
     initNavigation();
+    initCarousel();
     initAnimations();
     initVideoHandling();
     initCopyButtons();
+    initSmoothScroll();
 });
 
 // Reinitialize animations on page show (for back/forward navigation)
