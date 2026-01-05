@@ -940,12 +940,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Featured Publications Grid */
 .featured-pub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
 .featured-pub-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
     background: var(--color-white);
     border-radius: 12px;
     overflow: hidden;
@@ -959,10 +961,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .featured-pub-image {
-    width: 100%;
+    width: 280px;
     height: 180px;
     overflow: hidden;
     background: var(--color-beige-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .featured-pub-image img {
@@ -972,11 +977,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .featured-pub-content {
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .featured-pub-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--color-text);
     line-height: 1.4;
@@ -994,6 +1002,18 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
     color: var(--color-slate-blue);
     font-weight: 500;
+}
+
+/* Mobile: 세로 배치 */
+@media (max-width: 768px) {
+    .featured-pub-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-pub-image {
+        width: 100%;
+        height: 200px;
+    }
 }
 
 .pub-badge {
