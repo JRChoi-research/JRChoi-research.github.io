@@ -93,95 +93,87 @@
         </div>
     </section>
 
-    <!-- Featured Research Section with Carousel -->
+    <!-- Featured Research Section with Video Carousel -->
     <section class="section section-gray">
         <div class="container">
-            <div class="section-header fade-up" style="text-align: center; margin-bottom: 3rem;">
+            <div class="section-header fade-up" style="text-align: center; margin-bottom: 2rem;">
                 <span class="section-label">Featured Research</span>
-                <h2>Exploring Wearable & Stretchable Electronics</h2>
             </div>
 
-            <!-- Carousel Container -->
-            <div class="carousel-container fade-up">
-                <button class="carousel-btn carousel-btn-prev" aria-label="Previous">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Video Carousel -->
+            <div class="video-carousel fade-up" data-carousel="featured">
+                <button class="video-carousel-btn video-carousel-prev" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
-
-                <div class="carousel-track-wrapper">
-                    <div class="carousel-track">
-                        <!-- Research 01 -->
-                        <article class="research-card carousel-slide" data-link="research.html#research-01">
-                            <div class="research-card-media">
-                                <img src="assets/images/research/research_01.png" alt="3D Shaped Electronics">
-                            </div>
-                            <div class="research-card-content">
-                                <h3 class="research-card-title">3D Shaped Electronics</h3>
-                                <p class="research-card-description">
-                                    Three-dimensional shaped electronic device technology through thermoforming and pre-distortion patterning.
-                                </p>
-                                <span class="research-card-meta">Science Advances, 2021</span>
-                            </div>
-                        </article>
-
-                        <!-- Research 02 -->
-                        <article class="research-card carousel-slide" data-link="research.html#research-02">
-                            <div class="research-card-media">
-                                <img src="assets/images/research/research_02.png" alt="Stretchable Sensors">
-                            </div>
-                            <div class="research-card-content">
-                                <h3 class="research-card-title">Stretchable Physical Sensors</h3>
-                                <p class="research-card-description">
-                                    High-performance stretchable/flexible physical sensors including tensile, pressure, and tactile sensors.
-                                </p>
-                                <span class="research-card-meta">Nano Energy, 2020</span>
-                            </div>
-                        </article>
-
-                        <!-- Research 03 -->
-                        <article class="research-card carousel-slide" data-link="research.html#research-03">
-                            <div class="research-card-media">
-                                <img src="assets/images/research/research_03.png" alt="Flexible Actuators">
-                            </div>
-                            <div class="research-card-content">
-                                <h3 class="research-card-title">Flexible Actuators</h3>
-                                <p class="research-card-description">
-                                    Research on flexible actuators for soft robotics and wearable applications.
-                                </p>
-                                <span class="research-card-meta">Advanced Materials Technologies, 2022</span>
-                            </div>
-                        </article>
-
-                        <!-- Research 04 -->
-                        <article class="research-card carousel-slide" data-link="research.html#research-04">
-                            <div class="research-card-media">
-                                <img src="assets/images/research/research_04.png" alt="Stretchable Circuits">
-                            </div>
-                            <div class="research-card-content">
-                                <h3 class="research-card-title">Stretchable Interfaces & Circuits</h3>
-                                <p class="research-card-description">
-                                    Development of stretchable/flexible interfaces, measurement and wireless communication circuits.
-                                </p>
-                                <span class="research-card-meta">Advanced Functional Materials, 2022</span>
-                            </div>
-                        </article>
+                <div class="video-carousel-track-wrapper">
+                    <div class="video-carousel-track">
+                        <!-- Video 1 -->
+                        <div class="video-carousel-slide">
+                            <video muted loop playsinline>
+                                <source src="assets/videos/featured/video1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <!-- Video 2 -->
+                        <div class="video-carousel-slide">
+                            <video muted loop playsinline>
+                                <source src="assets/videos/featured/video2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <!-- Video 3 -->
+                        <div class="video-carousel-slide">
+                            <video muted loop playsinline>
+                                <source src="assets/videos/featured/video3.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                 </div>
-
-                <button class="carousel-btn carousel-btn-next" aria-label="Next">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <button class="video-carousel-btn video-carousel-next" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                 </button>
             </div>
 
-            <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1"></button>
-                <button class="carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
-                <button class="carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
-                <button class="carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
+            <!-- Video Indicators + Outcomes -->
+            <div class="video-carousel-footer" data-carousel="featured">
+                <div class="video-carousel-indicators">
+                    <button class="video-dot active" data-index="0"></button>
+                    <button class="video-dot" data-index="1"></button>
+                    <button class="video-dot" data-index="2"></button>
+                </div>
+                <div class="video-outcomes-track">
+                    <!-- Outcome for Video 1 -->
+                    <div class="video-outcome active">
+                        <span class="outcome-tag tag-paper">Paper</span>
+                        <span class="outcome-title">J. Choi et al., Science Advances, 2021</span>
+                        <a href="https://doi.org/10.1126/sciadv.abj0694" target="_blank" rel="noopener" class="outcome-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- Outcome for Video 2 -->
+                    <div class="video-outcome">
+                        <span class="outcome-tag tag-patent">Patent</span>
+                        <span class="outcome-title">KR 10-2022-XXXXXXX</span>
+                    </div>
+                    <!-- Outcome for Video 3 -->
+                    <div class="video-outcome">
+                        <span class="outcome-tag tag-exhibition">Exhibition</span>
+                        <span class="outcome-title">Nano Korea 2023</span>
+                        <a href="#" target="_blank" rel="noopener" class="outcome-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div style="text-align: center; margin-top: 2rem;" class="fade-up">
