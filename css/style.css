@@ -1004,7 +1004,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .featured-pub-card {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 350px 1fr;
     background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
@@ -1019,9 +1019,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .featured-pub-image {
-    height: 100%;
-    min-height: 200px;
-    width: auto;
+    width: 350px;
+    height: 200px;
     padding: 1rem;
     background: var(--card-bg);
     display: flex;
@@ -1031,8 +1030,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .featured-pub-image img {
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     width: auto;
+    height: auto;
     object-fit: contain;
 }
 
