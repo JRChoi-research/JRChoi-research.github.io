@@ -408,6 +408,119 @@ function initSmoothScroll() {
 }
 
 // ============================================
+// Video Carousel for Research Page
+// ============================================
+function initVideoCarousel() {
+    const carousels = document.querySelectorAll('.video-carousel');
+    
+    carousels.forEach(carousel => {
+        const carouselId = carousel.getAttribute('data-carousel');
+        const track = carousel.querySelector('.video-carousel-track');
+        const slides = carousel.querySelectorAll('.video-carousel-slide');
+        const prevBtn = carousel.querySelector('.video-carousel-prev');
+        const nextBtn = carousel.querySelector('.video-carousel-next');
+        const indicatorContainer = document.querySelector(`.video-carousel-indicators[data-carousel="${carouselId}"]`);
+        const dots = indicatorContainer ? indicatorContainer.querySelectorAll('.video-dot') : [];
+        
+        if (!track || slides.length === 0) return;
+        
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        
+        function updateCarousel() {
+            // Update track position
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // Update button states
+            if (prevBtn) prevBtn.disabled = currentIndex === 0;
+            if (nextBtn) nextBtn.disabled = currentIndex === totalSlides - 1;
+            
+            // Pause all videos, play current one
+            slides.forEach((slide, index) => {
+                const video = slide.querySelector('video');
+                if (video) {
+                    if (index === currentIndex) {
+                        video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
+                }
+            });
+        }
+        
+        function goToSlide(index) {
+            currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+        
+        // Event listeners
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+        
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            const swipeThreshold = 50;
+            
+            if (diff > swipeThreshold) {
+                nextSlide();
+            } else if (diff < -swipeThreshold) {
+                prevSlide();
+            }
+        }, { passive: true });
+        
+        // Initialize - play first video when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCarousel();
+                } else {
+                    // Pause all videos when carousel is out of view
+                    slides.forEach(slide => {
+                        const video = slide.querySelector('video');
+                        if (video) video.pause();
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        observer.observe(carousel);
+    });
+}
+
+// ============================================
 // Initialize
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -420,6 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCopyButtons();
     initSmoothScroll();
     initAccordion();
+    initVideoCarousel();
 });
 
 // Reinitialize animations on page show (for back/forward navigation)
