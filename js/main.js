@@ -419,8 +419,11 @@ function initVideoCarousel() {
         const slides = carousel.querySelectorAll('.video-carousel-slide');
         const prevBtn = carousel.querySelector('.video-carousel-prev');
         const nextBtn = carousel.querySelector('.video-carousel-next');
-        const indicatorContainer = document.querySelector(`.video-carousel-indicators[data-carousel="${carouselId}"]`);
+        const footerContainer = document.querySelector(`.video-carousel-footer[data-carousel="${carouselId}"]`);
+        const indicatorContainer = footerContainer ? footerContainer.querySelector('.video-carousel-indicators') : null;
         const dots = indicatorContainer ? indicatorContainer.querySelectorAll('.video-dot') : [];
+        const outcomesTrack = footerContainer ? footerContainer.querySelector('.video-outcomes-track') : null;
+        const outcomes = outcomesTrack ? outcomesTrack.querySelectorAll('.video-outcome') : [];
         
         if (!track || slides.length === 0) return;
         
@@ -434,6 +437,11 @@ function initVideoCarousel() {
             // Update dots
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // Update outcomes (태그 연동)
+            outcomes.forEach((outcome, index) => {
+                outcome.classList.toggle('active', index === currentIndex);
             });
             
             // Update button states
