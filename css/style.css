@@ -1088,7 +1088,7 @@ h1, h2, h3, h4, h5, h6 {
 .pub-badge {
     display: inline-block;
     background: var(--color-accent);
-    color: white;
+    color: #1a1a1a;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.7rem;
@@ -1099,7 +1099,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pub-badge.corresponding {
-    background: var(--color-slate-blue);
+    background: var(--color-accent);
 }
 
 /* Dark Section */
@@ -1120,7 +1120,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title-light {
-    color: var(--color-white);
+    color: #f5f0e6;
     font-size: 1.75rem;
     font-weight: 500;
 }
@@ -1160,7 +1160,7 @@ h1, h2, h3, h4, h5, h6 {
 .pub-year-icon {
     font-size: 1.5rem;
     font-weight: 300;
-    opacity: 0.7;
+    color: var(--color-accent);
 }
 
 .pub-year-content {
@@ -1467,6 +1467,14 @@ h1, h2, h3, h4, h5, h6 {
     background: 
         linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%),
         radial-gradient(circle at 20% 80%, rgba(168, 212, 168, 0.08) 0%, transparent 50%);
+}
+
+[data-theme="dark"] .hero-position {
+    color: #f5f0e6;
+}
+
+[data-theme="dark"] .title-highlight {
+    color: #f5f0e6;
 }
 
 [data-theme="dark"] .btn-primary:hover {
