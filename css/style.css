@@ -1005,7 +1005,7 @@ h1, h2, h3, h4, h5, h6 {
 .featured-pub-card {
     display: grid;
     grid-template-columns: 300px 1fr;
-    background: var(--card-bg);
+    background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
@@ -1023,7 +1023,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     min-height: 200px;
     padding: 1rem 0.5rem 1rem 1rem;
-    background: var(--card-bg);
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1473,12 +1473,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="dark"] .btn-secondary {
-    color: var(--color-beige);
-    border-color: var(--color-beige);
+    color: #f5f0e6;
+    border-color: #f5f0e6;
+    background: transparent;
 }
 
 [data-theme="dark"] .btn-secondary:hover {
-    background: var(--color-beige);
+    background: #f5f0e6;
     color: #2a3a50;
 }
 
