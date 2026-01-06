@@ -1022,7 +1022,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 300px;
     height: 100%;
     min-height: 200px;
-    padding: 1rem;
+    padding: 1rem 0.5rem 1rem 1rem;
     background: var(--card-bg);
     display: flex;
     align-items: center;
