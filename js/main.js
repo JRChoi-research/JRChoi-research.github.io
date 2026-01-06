@@ -6,6 +6,47 @@
  * ============================================ */
 
 // ============================================
+// Theme Toggle (Dark/Light Mode)
+// ============================================
+function initThemeToggle() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Optional: Auto dark mode based on time (7 PM - 7 AM)
+    const hour = new Date().getHours();
+    const isNightTime = hour >= 19 || hour < 7;
+    
+    // Set initial theme
+    if (savedTheme) {
+        html.setAttribute('data-theme', savedTheme);
+    } else if (systemPrefersDark || isNightTime) {
+        html.setAttribute('data-theme', 'dark');
+    }
+    
+    // Toggle theme on button click
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+}
+
+// ============================================
 // Content Protection
 // ============================================
 function initContentProtection() {
@@ -370,6 +411,7 @@ function initSmoothScroll() {
 // Initialize
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+    initThemeToggle();
     initContentProtection();
     initNavigation();
     initCarousel();

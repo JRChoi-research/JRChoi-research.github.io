@@ -44,6 +44,52 @@
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Navigation */
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-border: rgba(91, 107, 140, 0.1);
+    
+    /* Cards */
+    --card-bg: #ffffff;
+    --card-border: transparent;
+}
+
+/* ============================================
+ * Dark Mode
+ * ============================================ */
+[data-theme="dark"] {
+    /* Core Colors - Dark Mode */
+    --color-slate-blue: #a8b4c8;
+    --color-slate-dark: #c8d0dc;
+    --color-slate-light: #8a9ab0;
+    --color-beige: #3a3530;
+    --color-beige-light: #2a2520;
+    --color-beige-dark: #4a4540;
+    --color-white: #1a1815;
+    --color-black: #f5f0e6;
+    --color-accent: #a8d4a8;
+    
+    /* Legacy variable names */
+    --bg-main: #2a2520;
+    --bg-white: #1a1815;
+    --bg-gray: #2a2520;
+    --color-primary: #a8d4a8;
+    --color-secondary: #a8b4c8;
+    --color-text: #e8e4dc;
+    --color-text-secondary: #a0a0a0;
+    
+    /* Effects - Dark Mode */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    
+    /* Navigation */
+    --nav-bg: rgba(26, 24, 21, 0.95);
+    --nav-border: rgba(168, 180, 200, 0.1);
+    
+    /* Cards */
+    --card-bg: #252220;
+    --card-border: rgba(168, 180, 200, 0.1);
 }
 
 body {
@@ -108,9 +154,9 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     height: var(--nav-height);
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--nav-bg);
     z-index: 1000;
-    border-bottom: 1px solid rgba(91, 107, 140, 0.1);
+    border-bottom: 1px solid var(--nav-border);
     backdrop-filter: blur(10px);
 }
 
@@ -441,8 +487,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--color-white);
-    border: none;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -465,7 +511,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousel-btn:disabled:hover {
-    background: var(--color-white);
+    background: var(--card-bg);
     color: var(--color-slate-blue);
     transform: none;
 }
@@ -507,12 +553,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .research-card {
-    background: var(--color-white);
+    background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     cursor: pointer;
+    border: 1px solid var(--card-border);
 }
 
 .research-card:hover {
@@ -633,11 +680,12 @@ h1, h2, h3, h4, h5, h6 {
 .pub-item {
     display: grid;
     grid-template-columns: 180px 1fr;
-    background: var(--color-white);
+    background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    border: 1px solid var(--card-border);
 }
 
 .pub-item:hover {
@@ -752,11 +800,12 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 3rem;
-    background: var(--color-white);
+    background: var(--card-bg);
     padding: 3rem;
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     align-items: start;
+    border: 1px solid var(--card-border);
 }
 
 .profile-image {
@@ -858,12 +907,13 @@ h1, h2, h3, h4, h5, h6 {
  * Contact
  * ============================================ */
 .contact-card {
-    background: var(--color-white);
+    background: var(--card-bg);
     padding: 3rem;
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     max-width: 600px;
     margin: 0 auto;
+    border: 1px solid var(--card-border);
 }
 
 .contact-item {
@@ -948,11 +998,12 @@ h1, h2, h3, h4, h5, h6 {
 .featured-pub-card {
     display: grid;
     grid-template-columns: 300px 1fr;
-    background: var(--color-white);
+    background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    border: 1px solid var(--card-border);
 }
 
 .featured-pub-card:hover {
@@ -1325,4 +1376,150 @@ h1, h2, h3, h4, h5, h6 {
 .protected img {
     pointer-events: none;
     -webkit-user-drag: none;
+}
+
+/* ============================================
+ * Theme Toggle Button
+ * ============================================ */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-slate-blue);
+    transition: var(--transition);
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--color-beige-light);
+    color: var(--color-accent);
+}
+
+.theme-toggle svg {
+    width: 22px;
+    height: 22px;
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: var(--color-beige-dark);
+}
+
+/* ============================================
+ * Dark Mode Specific Overrides
+ * ============================================ */
+[data-theme="dark"] body {
+    background: var(--color-white);
+}
+
+[data-theme="dark"] .nav-menu {
+    background: var(--nav-bg);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+    color: var(--color-accent);
+}
+
+[data-theme="dark"] .hero {
+    background: #2a3a50;
+}
+
+[data-theme="dark"] .hero::before {
+    background: 
+        linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(168, 212, 168, 0.08) 0%, transparent 50%);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background: #8ac48a;
+}
+
+[data-theme="dark"] .btn-secondary {
+    color: var(--color-beige);
+    border-color: var(--color-beige);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: var(--color-beige);
+    color: #2a3a50;
+}
+
+[data-theme="dark"] .carousel-btn:hover {
+    background: var(--color-slate-blue);
+    color: var(--color-white);
+}
+
+[data-theme="dark"] .footer {
+    background: #1a2530;
+}
+
+[data-theme="dark"] .section-dark {
+    background: #1a2530;
+}
+
+[data-theme="dark"] .timeline-item::before {
+    border-color: var(--bg-main);
+}
+
+[data-theme="dark"] .research-media-item {
+    background: var(--color-beige-dark);
+}
+
+[data-theme="dark"] .pub-image,
+[data-theme="dark"] .featured-pub-image {
+    background: var(--color-beige-dark);
+}
+
+[data-theme="dark"] .copy-btn {
+    background: var(--color-beige-dark);
+}
+
+[data-theme="dark"] .copy-btn:hover {
+    background: var(--color-slate-blue);
+}
+
+[data-theme="dark"] .contact-item {
+    border-bottom-color: var(--color-beige-dark);
+}
+
+/* Dark mode image adjustments */
+[data-theme="dark"] .profile-image img,
+[data-theme="dark"] .research-card-media img {
+    filter: brightness(0.95);
+}
+
+/* Smooth theme transition */
+body,
+.nav,
+.section,
+.card,
+.btn,
+.research-card,
+.profile-card,
+.contact-card,
+.featured-pub-card,
+.carousel-btn,
+.footer {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
