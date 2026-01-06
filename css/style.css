@@ -1005,7 +1005,7 @@ h1, h2, h3, h4, h5, h6 {
 .featured-pub-card {
     display: grid;
     grid-template-columns: 300px 1fr;
-    background: #ffffff;
+    background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
@@ -1154,6 +1154,7 @@ h1, h2, h3, h4, h5, h6 {
 .pub-year-title {
     font-size: 1.5rem;
     font-weight: 500;
+    color: var(--color-accent);
 }
 
 .pub-year-icon {
@@ -1192,13 +1193,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pub-details {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.9);
 }
 
 .pub-details strong {
-    color: var(--color-white);
+    color: var(--color-accent);
     font-weight: 600;
 }
 
