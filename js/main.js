@@ -538,29 +538,26 @@ function initResearchCardHover() {
         const video = card.querySelector('video');
         if (!video) return;
         
-        // Ensure video is muted and ready
+        // Ensure video is muted and ready (no loop)
         video.muted = true;
-        video.loop = true;
+        video.loop = false;
         video.playsInline = true;
         
-        // Play on mouse enter
+        // Play on mouse enter (only if paused)
         card.addEventListener('mouseenter', () => {
-            video.play().catch(() => {});
+            if (video.paused) {
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            }
         });
         
-        // Pause and reset on mouse leave
-        card.addEventListener('mouseleave', () => {
-            video.pause();
-            video.currentTime = 0;
-        });
+        // Do nothing on mouse leave - video keeps playing
         
         // Touch support for mobile
         card.addEventListener('touchstart', () => {
             if (video.paused) {
-                video.play().catch(() => {});
-            } else {
-                video.pause();
                 video.currentTime = 0;
+                video.play().catch(() => {});
             }
         }, { passive: true });
     });
