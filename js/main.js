@@ -529,6 +529,44 @@ function initVideoCarousel() {
 }
 
 // ============================================
+// Research Card Video Hover Play
+// ============================================
+function initResearchCardHover() {
+    const cards = document.querySelectorAll('.research-card-item');
+    
+    cards.forEach(card => {
+        const video = card.querySelector('video');
+        if (!video) return;
+        
+        // Ensure video is muted and ready
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        
+        // Play on mouse enter
+        card.addEventListener('mouseenter', () => {
+            video.play().catch(() => {});
+        });
+        
+        // Pause and reset on mouse leave
+        card.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+        
+        // Touch support for mobile
+        card.addEventListener('touchstart', () => {
+            if (video.paused) {
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+                video.currentTime = 0;
+            }
+        }, { passive: true });
+    });
+}
+
+// ============================================
 // Initialize
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -542,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initAccordion();
     initVideoCarousel();
+    initResearchCardHover();
 });
 
 // Reinitialize animations on page show (for back/forward navigation)
