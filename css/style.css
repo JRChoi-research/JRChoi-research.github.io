@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-label {
     display: inline-block;
     font-family: var(--font-display);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--color-accent);
@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
  * Hero Section
  * ============================================ */
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     background: var(--color-slate-blue);
     background-image: url('../assets/images/hero-bg.png');
     background-size: cover;
@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: calc(var(--nav-height) + 2rem) 2rem 4rem;
+    padding: calc(var(--nav-height) + 3rem) 2rem 3rem;
     position: relative;
     overflow: hidden;
 }
@@ -1855,9 +1855,9 @@ body,
  * ============================================ */
 .research-card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -1878,7 +1878,7 @@ body,
 .research-card-video {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #000;
 }
@@ -1891,27 +1891,27 @@ body,
 }
 
 .research-card-info {
-    padding: 1.25rem 1.5rem 1.5rem;
+    padding: 1.5rem 1.75rem 1.75rem;
 }
 
 .research-card-title {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     line-height: 1.4;
 }
 
 .research-card-desc {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--color-text-secondary);
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    margin-bottom: 0.85rem;
 }
 
 .research-card-journal {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--color-accent);
 }
@@ -1927,28 +1927,21 @@ body,
 }
 
 /* Responsive for Research Card Grid */
-@media (max-width: 992px) {
-    .research-card-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
-    }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .research-card-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
     }
     
     .research-card-info {
-        padding: 1rem 1.25rem 1.25rem;
+        padding: 1.25rem 1.5rem 1.5rem;
     }
     
     .research-card-title {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .research-card-desc {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 }
