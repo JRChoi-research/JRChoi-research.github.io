@@ -1945,3 +1945,38 @@ body,
         font-size: 0.9rem;
     }
 }
+
+/* Wide (featured) research card spanning both columns */
+.research-card-wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    align-items: stretch;
+}
+.research-card-wide .research-card-video {
+    aspect-ratio: 1340 / 1020;
+    height: 100%;
+}
+.research-card-wide .research-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.research-card-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-primary, #2563eb);
+    margin-bottom: 0.6rem;
+}
+@media (max-width: 768px) {
+    .research-card-wide {
+        grid-template-columns: 1fr;
+    }
+    .research-card-wide .research-card-video {
+        height: auto;
+    }
+}
