@@ -1980,3 +1980,25 @@ body,
         height: auto;
     }
 }
+
+/* Mobile menu fixes (2026-11-09): underline sat across the text, sticky hover underline on touch, see-through menu */
+@media (max-width: 768px) {
+    .nav-link {
+        display: inline-block;
+        padding: 0.75rem 0;
+    }
+    .nav-link::after {
+        bottom: 0.45rem;
+    }
+    .nav-menu {
+        background: var(--color-white);
+    }
+    [data-theme="dark"] .nav-menu {
+        background: rgb(26, 24, 21);
+    }
+}
+@media (hover: none) {
+    .nav-link:hover:not(.active)::after {
+        width: 0;
+    }
+}
