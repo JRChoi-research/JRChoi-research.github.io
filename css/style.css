@@ -2002,3 +2002,20 @@ body,
         width: 0;
     }
 }
+
+/* "Video" badge on every research card video (2026-11-10) */
+.research-card-video::before {
+    content: "\25B6\00A0 VIDEO";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(14, 17, 23, 0.72);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    pointer-events: none;
+}
